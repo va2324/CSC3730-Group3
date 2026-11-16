@@ -14,6 +14,18 @@ The model strategies that were implemented and evaluated include:
 ### KNN Regression
 ### Support Vector Regression
 ### Decision Tree Regression
+
+Install the dependencies in your Python environment and run the decision tree from the project folder.
+
+```bash
+python -m pip install -r requirements.txt
+python decision_tree.py
+```
+
+You can also open [decision_tree.ipynb](decision_tree.ipynb), select the same Python environment as the kernel, and run all cells. Both use the repository's `energydata.csv` and write metrics, predictions, and plots to `outputs/decision_tree/`.
+
+The workflow trains on the earliest 80% of the data, tunes the tree with five time-ordered folds within that training period, and compares it with a training-mean baseline on the latest 20%. Its scores use a different split from the randomized split in `gridsearch.py`.
+
 ### Multi-Layer Perceptron
 ### Random Forest
 ### Bagging Regressor
