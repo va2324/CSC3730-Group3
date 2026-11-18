@@ -12,6 +12,9 @@ This dataset consists of 28 features and 1 target feature "Appliances", which re
 The model strategies that were implemented and evaluated include: 
 ### Linear Regression
 ### KNN Regression
+
+Install all dependencies (listed in the first cell) in your Python environment, select it as your kernel for the notebook file [knn.ipynb](knn.ipynb), and run all cells. This file imports the `energydata.csv` file and runs the preprocessing & grid search and prints the final evaluation score metrics for the KNN Regressor model. 
+
 ### Support Vector Regression
 ### Decision Tree Regression
 
@@ -29,4 +32,9 @@ The workflow trains on the earliest 80% of the data, tunes the tree with five ti
 ### Multi-Layer Perceptron
 ### Random Forest
 ### Bagging Regressor
+
+Install all dependencies (listed in the first cell) in your Python environment, select it as your kernel for the notebook file [knn.ipynb](knn.ipynb), and run all cells. This file imports the `energydata.csv` file and runs the preprocessing & grid search and writes metrics, predictions, & saves plots to the `plots` directory. 
+
+Grid search is done on 5 different BaggingRegressor models, each with a different base estimator: DecisionTreeRegressor, KNeighborsRegressor, LinearRegression, MLPRegressor, & SVR. The final evaluation metrics of these 5 models were plotted and compared to see which base estimator gives BaggingRegressor the best performance. 
+
 ### Gradient Boosting
