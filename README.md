@@ -30,6 +30,11 @@ You can also open [decision_tree.ipynb](decision_tree.ipynb), select the same Py
 The workflow trains on the earliest 80% of the data, tunes the tree with five time-ordered folds within that training period, and compares it with a training-mean baseline on the latest 20%. Its scores use a different split from the randomized split in `gridsearch.py`.
 
 ### Multi-Layer Perceptron
+
+Install the dependencies in [requirements.txt](requirements.txt) in your Python environment, select it as your kernel for the notebook file [mlp.ipynb](mlp.ipynb), and run all cells. This file imports the `energydata.csv` file, runs the same preprocessing & 70/30 split as the KNN and Bagging notebooks, and saves plots to the `plots` directory.
+
+The notebook first evaluates a training-mean baseline and an `MLPRegressor` with default parameters. It then runs a randomized search (30 parameter combinations, 5-fold cross validation) over hidden layer sizes, activation function, `alpha` (L2 regularization), initial learning rate, and batch size, with early stopping enabled. The tuned model's MAE, MSE, & RMSE on the test set are compared against the baseline, the default MLP, KNN, and the Bagging Regressor with an MLP base estimator, and train vs test error is compared to check for overfitting. The grid search takes roughly 10-30 minutes depending on your machine.
+
 ### Random Forest
 ### Bagging Regressor
 
