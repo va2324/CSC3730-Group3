@@ -29,6 +29,8 @@ You can also open [decision_tree.ipynb](decision_tree.ipynb), select the same Py
 
 The workflow trains on the earliest 80% of the data, tunes the tree with five time-ordered folds within that training period, and compares it with a training-mean baseline on the latest 20%. Its scores use a different split from the randomized split in `gridsearch.py`.
 
+`metrics.csv` reports MAE, MSE, RMSE, and R². `high_demand_errors.csv` reports MAE and mean signed error for test intervals at or above the training set's 90th percentile and for the remaining intervals. Mean signed error is predicted usage minus actual usage, so negative values indicate underprediction on average.
+
 ### Multi-Layer Perceptron
 
 Install the dependencies in [requirements.txt](requirements.txt) in your Python environment, select it as your kernel for the notebook file [mlp.ipynb](mlp.ipynb), and run all cells. This file imports the `energydata.csv` file, runs the same preprocessing & 70/30 split as the KNN and Bagging notebooks, and saves plots to the `plots` directory.
