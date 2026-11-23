@@ -37,8 +37,10 @@ def load_data(path):
     return df
 
 def metrics(actual, predicted):
+    mse = float(mean_squared_error(actual, predicted))
     return {"MAE_Wh": float(mean_absolute_error(actual, predicted)),
-            "RMSE_Wh": float(np.sqrt(mean_squared_error(actual, predicted))),
+            "MSE_Wh2": mse,
+            "RMSE_Wh": float(np.sqrt(mse)),
             "R2": float(r2_score(actual, predicted))}
 
 def save_plot(path):
@@ -90,8 +92,10 @@ def run_project(data_path=None, output_dir=None):
     groups = []
     for high, group in predictions.groupby("high_demand"):
         for model, column in [("Decision tree", "tree_Wh"), ("Baseline", "baseline_Wh")]:
+            signed_errors = group[column] - group["actual_Wh"]
             groups.append({"Model": model, "High_demand": bool(high), "Count": len(group),
-                           "MAE_Wh": float(mean_absolute_error(group.actual_Wh, group[column]))})
+                           "MAE_Wh": float(signed_errors.abs().mean()),
+                           "Mean_signed_error_Wh": float(signed_errors.mean())})
     pd.DataFrame(groups).to_csv(out / "high_demand_errors.csv", index=False)
 
     importance = pd.Series(tree.feature_importances_, index=FEATURES).sort_values(ascending=False)
