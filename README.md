@@ -50,12 +50,15 @@ grid search and prints the final evaluation score metrics for the KNN Regressor 
 ### Support Vector Regression
 Install the required packages in the Python environment used to run the script.
 
+```bash
 python -m pip install numpy pandas scikit-learn matplotlib openpyxl xlrd
+```
 
 Place appliance_svr.py and energydata_complete.csv in the same folder, open a terminal in that folder, and run the following command.
 
+```bash
 python appliance_svr.py
-
+```
 
 ### Decision Tree Regression
 
