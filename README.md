@@ -16,6 +16,15 @@ The model strategies that were implemented and evaluated include:
 Install all dependencies (requirements.txt) in your Python environment, select it as your kernel for the notebook file [knn.ipynb](knn.ipynb), and run all cells. This file imports the `energydata.csv` file and runs the preprocessing & grid search and prints the final evaluation score metrics for the KNN Regressor model. 
 
 ### Support Vector Regression
+Install the required packages in the Python environment used to run the script.
+
+python -m pip install numpy pandas scikit-learn matplotlib openpyxl xlrd
+
+Place appliance_svr.py and energydata_complete.csv in the same folder, open a terminal in that folder, and run the following command.
+
+python appliance_svr.py
+
+
 ### Decision Tree Regression
 
 Install the dependencies in your Python environment and run the decision tree from the project folder.
