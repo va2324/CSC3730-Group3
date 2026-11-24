@@ -45,3 +45,12 @@ Install all dependencies in [requirements.txt](requirements.txt) in your Python 
 Grid search is done on 5 different BaggingRegressor models, each with a different base estimator: DecisionTreeRegressor, KNeighborsRegressor, LinearRegression, MLPRegressor, & SVR. The final evaluation metrics of these 5 models were plotted and compared to see which base estimator gives BaggingRegressor the best performance. 
 
 ### Gradient Boosting
+
+From the project folder, install the dependencies and run the gradient boosting script.
+
+```bash
+python -m pip install -r requirements.txt
+python gradient_boosting.py
+```
+
+The script reads `energydata.csv` and prints the best hyperparameters, cross-validation MAE, and test MAE, MSE, and RMSE for both the gradient boosting model and the training-mean baseline.
