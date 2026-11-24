@@ -48,6 +48,15 @@ file [knn.ipynb](knn.ipynb), and run all cells. This file imports the `energydat
 grid search and prints the final evaluation score metrics for the KNN Regressor model. 
 
 ### Support Vector Regression
+Install the required packages in the Python environment used to run the script.
+
+python -m pip install numpy pandas scikit-learn matplotlib openpyxl xlrd
+
+Place appliance_svr.py and energydata_complete.csv in the same folder, open a terminal in that folder, and run the following command.
+
+python appliance_svr.py
+
+
 ### Decision Tree Regression
 
 Install the dependencies in your Python environment and run the decision tree from the project folder.
