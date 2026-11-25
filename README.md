@@ -94,6 +94,11 @@ MLP base estimator, and train vs test error is compared to check for overfitting
 minutes depending on your machine.
 
 ### Random Forest
+
+Install all dependencies in [requirements.txt](requirements.txt) in your Python environment, select it as your kernel for the notebook
+file [randomForest.ipynb](randomForest.ipynb), and run all cells. This file imports the `energydata.csv` file and runs the same preprocessing 
+as the rest of the files. Then, it uses gridsearch and a five fold k-split to determine the best parameters for n_estimators, max_depth, min_samples, and max_features, totaling 54 possible combinations. The gridsearch took about 13 minutes to run on my machine, but it could take longer. After all that, it prints the best CV RMSE, MAE, MSE, and RMSE, alongside the 10 most important features.
+
 ### Bagging Regressor
 
 Install all dependencies in [requirements.txt](requirements.txt) in your Python environment, select it as your kernel for the notebook
